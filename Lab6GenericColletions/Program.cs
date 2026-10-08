@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            StackOfEmployees();
-
+            //StackOfEmployees();
+            ListOfEmployees();
 
         }
 
@@ -28,7 +28,7 @@
             {
 
                 Console.WriteLine($"Antal anställda kvar: {employeeStack.Count}");
-                employee.PrintStackInfo();
+                employee.PrintEmployeeInfo();
 
 
             }
@@ -37,7 +37,7 @@
             while (employeeStack.Count > 0) // while loop som kör så länge stacken inte är tom(alltså lika med 0)
             {
                 Console.WriteLine($"Antal anställda kvar: {employeeStack.Count}");
-                employeeStack.Pop().PrintStackInfo();
+                employeeStack.Pop().PrintEmployeeInfo();
             }
             employeeStack.Push(employee1);
             employeeStack.Push(employee2);
@@ -52,9 +52,9 @@
             {
 
                 Console.WriteLine($"Antal anställda kvar: {employeeStack.Count}");
-                employeeStack.Peek().PrintStackInfo();
+                employeeStack.Peek().PrintEmployeeInfo();
                 Console.WriteLine($"Antal anställda kvar: {employeeStack.Count}");
-                employeeStack.Peek().PrintStackInfo();
+                employeeStack.Peek().PrintEmployeeInfo();
 
                 if (employeeStack.Contains(employee3))
                 {
@@ -73,7 +73,7 @@
             Console.WriteLine("alla olika loopar klara");
         }
 
-        public static void ListOfEmployees()
+        public static void ListOfEmployees() // Metod för att hantera allt med listan
         {
             Employee employee1 = new Employee(3456, "Daniel", "Man", 35000);
             Employee employee2 = new Employee(4672, "Bertil", "Man", 67000);
@@ -89,7 +89,7 @@
             employees.Add(employee4);
             employees.Add(employee5);
 
-            if (employees.Contains(employee2))
+            if (employees.Contains(employee2)) // för att se om anställda nummer 2 finns i min lista
             {
                 Console.WriteLine("Employees2 object exsists in the list");
             }
@@ -97,6 +97,17 @@
             {
                 Console.WriteLine("The object is not in the list");
             }
+
+            employees.Find(e => e.Gender == "Man").PrintEmployeeInfo(); // hittar den första Mannen i min lista och skriver ut hans info
+
+            
+
+            foreach (var employee in employees.FindAll(e => e.Gender == "Man"))  // hittar alla män i min lista och skriver ut deras info
+            {
+                
+                employee.PrintEmployeeInfo();
+            }
+            
         }
     }
 }
