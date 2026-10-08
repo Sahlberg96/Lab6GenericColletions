@@ -4,8 +4,44 @@
     {
         static void Main(string[] args)
         {
-            //StackOfEmployees();
-            ListOfEmployees();
+            
+            
+            bool isRunning = true;
+
+            while (isRunning)  
+            {
+                Console.WriteLine("vilken utav metoderna vill du ska skriva ut informationen?");
+                Console.WriteLine("1. Stack metoden");
+                Console.WriteLine("2. List metoden");
+                Console.WriteLine("3. Avsluta programet");
+                string userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "1":
+                        Console.Clear();
+                        Console.WriteLine("Du valde Stack metoden");
+                        StackOfEmployees();
+                        break;
+                    case "2":
+                        Console.Clear();
+                        Console.WriteLine("Du valde List metoden");
+                        ListOfEmployees();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        Console.WriteLine("Tack för din tid");
+                        isRunning = false;
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("välj mellan 1-3");
+                        break;
+
+                }
+
+
+            }
+            
 
         }
 
@@ -32,7 +68,7 @@
 
 
             }
-            Console.WriteLine("Foreach loppen klar\n"); // göra det tydligare när koden går till nästa loop
+            Console.WriteLine();
 
             while (employeeStack.Count > 0) // while loop som kör så länge stacken inte är tom(alltså lika med 0)
             {
@@ -58,11 +94,11 @@
 
                 if (employeeStack.Contains(employee3))
                 {
-                    Console.WriteLine($"{employee3.Name} är kvar");
+                    Console.WriteLine($"{employee3.Name} är kvar\n");
                 }
                 else
                 {
-                    Console.WriteLine($"{employee3.Name} är inte kvar");
+                    Console.WriteLine($"{employee3.Name} är inte kvar\n");
                 }
 
             }
