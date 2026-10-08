@@ -18,5 +18,14 @@ namespace Lab6GenericColletions
             Salary = salary;
         }
 
+        public void PrintStackInfo()
+        {
+            Console.WriteLine($"ID: {ID}");
+            Console.WriteLine($"Namn: {Name}");
+            Console.WriteLine($"Kön: {Gender}");
+            Console.WriteLine($"Lön: {Salary}");
+            Console.WriteLine();
+
+        }
     }
 }

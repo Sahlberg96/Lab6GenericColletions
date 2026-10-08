@@ -16,6 +16,11 @@
             employeeStack.Push(employee3);
             employeeStack.Push(employee4);
             employeeStack.Push(employee5);
+
+            foreach (var employee in employeeStack) 
+            {
+                employee.PrintStackInfo();
+            }
         }
     }
 }
