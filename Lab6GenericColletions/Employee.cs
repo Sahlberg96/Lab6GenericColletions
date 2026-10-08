@@ -10,6 +10,13 @@ namespace Lab6GenericColletions
         public string Name { get; set; }
         public string Gender { get; set; }
         public double Salary { get; set; }
+        public Employee(int iD, string name, string gender, double salary)
+        {
+            ID = iD;
+            Name = name;
+            Gender = gender;
+            Salary = salary;
+        }
 
     }
 }
