@@ -18,14 +18,16 @@ namespace Lab6GenericColletions
             Salary = salary;
         }
 
-        public void PrintStackInfo()
+        public void PrintStackInfo() // Kallar på denna metod med Pop eller Peek så att konsollen skriver ut mina anställda och deras information
         {
             Console.WriteLine($"ID: {ID}");
             Console.WriteLine($"Namn: {Name}");
             Console.WriteLine($"Kön: {Gender}");
-            Console.WriteLine($"Lön: {Salary}");
-            Console.WriteLine();
+            Console.WriteLine($"Lön: {Salary}\n");
+
 
         }
+
+        
     }
 }
